@@ -97,14 +97,26 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Cryptographer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\PaymentProvider.cs" />
+    <Compile Include="Models\PaymentProviderParameter.cs" />
+    <Compile Include="Models\PaymentTransaction.cs" />
+    <Compile Include="Models\PostAddress.cs" />
+    <Compile Include="Models\UrlPair.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Content\style.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -116,11 +128,15 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\Cart\OrderDetailsPartial.cshtml" />
+    <Content Include="Views\Cart\ItemListPartial.cshtml" />
+    <Content Include="Views\Cart\DeliveryPartial.cshtml" />
+    <Content Include="Views\Cart\StartTransaction.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
